@@ -1,0 +1,20 @@
+﻿<Window x:Class="Test_Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_Task"
+        mc:Ignorable="d"
+        Title="Log In" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <DockPanel HorizontalAlignment="Left" Width="100" Background="Black">
+            <Button Content="LOG&#xD;&#xA;OUT" HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Bottom" Background="White" BorderBrush="White" Foreground="Black" Width="55" Height="45" Click="LogOutClick">
+            </Button>
+        </DockPanel>
+        
+        <Button x:Name="EmployeeButton" Content="Employee" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="40" FontSize="20" Background="{x:Null}" BorderBrush="Black" Margin="250,0,0,0"/>
+        <Button x:Name="CoordinatorButton" Content="Coordinator" HorizontalAlignment="Right" VerticalAlignment="Center" Click="OpenCoordinator" FontSize="20" Width="150" Height="40" BorderBrush="Black" Background="{x:Null}" Margin="0,0,150,0"/>
+        
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Page
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_Task"
+        xmlns:Test_TaskDataSetTableAdapters="clr-namespace:Test_Task.Test_TaskDataSetTableAdapters" x:Class="Test_Task.EmployeeView"
+        mc:Ignorable="d"
+        Title="EmployeeView" Height="450" Width="800" Loaded="Window_Loaded">
+    <Page.Resources>
+        <CollectionViewSource x:Key="employeeViewViewSource" d:DesignSource="{d:DesignInstance {x:Type local:EmployeeView}}"/>
+        <local:Test_TaskDataSet x:Key="test_TaskDataSet"/>
+        <CollectionViewSource x:Key="itemViewSource" Source="{Binding Item, Source={StaticResource test_TaskDataSet}}"/>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource itemViewSource}">
+        <WrapPanel Margin="125,25,25,25">
+            <Button Content="Order" HorizontalAlignment="Left" VerticalAlignment="Top" Click="CreateNewOrder" Width="55" Height="27" Background="Black" Foreground="White" BorderBrush="Black" />
+            <Frame Content="" Margin="0,10,0,0" NavigationUIVisibility="Hidden" x:Name="MainFrame"/>
+        </WrapPanel>
+
+    </Grid>
+</Page>
